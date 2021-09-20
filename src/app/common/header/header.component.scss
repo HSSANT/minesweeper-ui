@@ -1,0 +1,16 @@
+header {
+    height: 50px;
+    padding: 6px 15px;
+    border-bottom: 2px solid black;
+    button {
+        float: right;
+    }
+    .title {
+        float: left;
+        height: 100%;
+        width: fit-content;
+    }
+    .half {
+        flex: 1 1 auto;
+    }
+}

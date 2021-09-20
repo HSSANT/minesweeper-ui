@@ -1,0 +1,50 @@
+.content {
+    min-height: 100%;
+    margin: 0px !important;
+    padding: 0px !important;
+    align-items: center;
+    background-color: white;
+}
+.login-container {
+    margin: auto;
+    padding: 25px 50px;
+    border-radius: 25px;
+    box-shadow: 2.5px 2px rgba(51, 83, 142, 0.13);
+    width: 560px;
+    height: fit-content;
+    max-width: 100%;
+    background-color: white !important; 
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    
+    .recaptchacontainer {
+        width: fit-content;
+        margin: 0px auto 10px auto;
+    }
+
+    mat-toolbar {
+        width: 100%;
+        background-color: white !important;
+    
+        img {
+            position: relative;
+            left: 320px;
+            top: 0px;
+            width: 300px;
+            height: 300px;
+            zoom: 0.19;
+            display: block;
+        }
+        h2 {
+            margin-left: 65px;
+            font-weight: lighter;
+            font-size: 30px;
+            font-family: 'Open Sans';
+            font-weight: 600;
+            color: rgba(51, 83, 142, 1) !important;
+        }
+    }
+    h3 {
+        text-align: center;
+		color: rgba(51, 83, 142, 1) !important;
+    }
+}

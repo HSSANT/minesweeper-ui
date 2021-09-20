@@ -1,0 +1,60 @@
+.row {
+    &.tools {
+        width: 100%;
+        width: fit-content;
+        margin: 15px auto;
+        button {
+            i {
+                font-size: 30px;
+            }
+            height: 70px !important;
+            width: 70px !important;
+        }
+        .time {
+            font-size: 42px;
+            padding-left: 15px;
+            padding-top: 23px;
+        }
+    }
+}
+
+.game {
+    width: max-content;
+    margin: auto;
+    .row {
+        width:fit-content;
+        padding: 0;
+        margin: 0;
+        .col-sm {
+            padding: 0;
+            flex-grow: 0;
+            .inner-container {
+                width: 30px;
+                height: 30px;
+                padding: 0px;
+                font-size: 11px;
+                button {
+                    width: 100%;
+                    height: 100%;
+                    color: black;
+                    font-weight: bold;
+                    border: 2px solid black;
+                    background-color: gray;
+                    &.opened {
+                        background-color: #cacaca;
+                    }
+                    &.flag {
+                        i {
+                            color:hotpink !important;
+                        }
+                    }
+                    &.bomb {
+                        i {
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

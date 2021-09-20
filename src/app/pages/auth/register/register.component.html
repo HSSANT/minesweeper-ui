@@ -1,0 +1,53 @@
+<div class="row content" id="content">
+    <div class="col-12">
+        <form 
+            [formGroup]="form" 
+            class="login-container m-blue" 
+            autocomplete="nope">
+            <h2>Sign In</h2>
+            <label for="username">User Name</label> 
+            <div class="input-group mb-3">
+                <br>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="User Name" 
+                    formControlName="username" 
+                    autocomplete="off">
+            </div>
+            <label for="password">Password</label>
+            <div class="input-group mb-3">
+                <br>
+                <input 
+                    type="password" 
+                    class="form-control" 
+                    placeholder="Password" 
+                    formControlName="password"
+                    autocomplete="nope">
+            </div>
+            <label for="password2">Repeat Password</label>
+            <div class="input-group mb-3">
+                <br>
+                <input 
+                    type="password" 
+                    class="form-control" 
+                    placeholder="Confirm password"
+                    formControlName="password2" 
+                    autocomplete="nope">
+            </div>
+            
+            <div class="alert alert-danger" role="alert" *ngIf="form.hasError('noMatch')">
+                Passwords must match!
+            </div>
+            
+            <div class="alert alert-danger" role="alert" *ngIf="hasErrors">
+                <p *ngFor="let error of errors">{{error}}</p>
+            </div>
+            <button 
+                type="button" 
+                class="btn btn-success" 
+                (click)="register()" 
+                *ngIf="!loading">Sign In</button>
+        </form>
+    </div>
+</div>

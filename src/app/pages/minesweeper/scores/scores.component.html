@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-12">
+        <mat-button-toggle-group [(ngModel)]="selectedGameType">
+            <mat-button-toggle [value]="GameType.EASY" (click)="changeSelectedGameType(GameType.EASY)">EASY</mat-button-toggle>
+            <mat-button-toggle [value]="GameType.NORMAL" (click)="changeSelectedGameType(GameType.NORMAL)">NORMAL</mat-button-toggle>
+            <mat-button-toggle [value]="GameType.HARD" (click)="changeSelectedGameType(GameType.HARD)">HARD</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div class="col-12">
+        <h4>SCORES ON {{ selectedGameType.toString() }} MODE</h4>
+    </div>
+    <div class="col-12" *ngFor="let score of scores; let i=index">{{i + 1}}. {{score.time}}</div>
+
+    <div class="col-12">
+        <button
+            type="button" 
+            class="btn btn-link" 
+            [routerLink]="['']">Go Back To Game</button>
+    </div>
+</div>

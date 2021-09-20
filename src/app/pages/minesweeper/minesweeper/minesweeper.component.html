@@ -1,0 +1,45 @@
+<div class="row tools">
+	<button 
+		class="btn btn-danger" 
+		(click)="enableFlagging()" 
+		[class.btn-light]="!flagging">
+		<i class="fas fa-flag"></i>
+	</button>
+	<button 
+		class="btn btn-warning" 
+		(click)="openSettingsDialog()">
+		<i class="far fa-smile" *ngIf="!winner && !gameOver"></i>
+		<i class="fas fa-sad-cry" *ngIf="gameOver"></i>
+		<i class="fas fa-laugh-beam" *ngIf="winner"></i>
+    </button>
+    <div class="time" *ngIf="dateToShow">
+        {{ dateToShow | date: "HH:mm:ss" }}
+    </div>
+</div>
+<hr>
+<div class="alert alert-danger" role="alert" *ngIf="gameOver">
+	<h4 class="alert-heading">Game Over!</h4>
+	<button type="button" class="btn btn-success" (click)="openSettingsDialog()">Restart</button>
+</div>
+<div class="alert alert-success" role="alert" *ngIf="winner">
+	<h4 class="alert-heading">You won the game!</h4>
+	<button type="button" class="btn btn-success" (click)="openSettingsDialog()">Restart</button>
+</div>
+<hr *ngIf="gameOver || winner">
+<div class="game">
+	<div class="row" *ngFor="let row of game">
+		<div class="col-sm" *ngFor="let col of row">
+			<div class="inner-container">
+				<button 
+					(click)="clickOnCell(col)" 
+					[class.opened]="col.open" 
+					[class.flag]="col.flag"
+					[class.bomb]="col.mine">
+					{{ col.open ? (col.count || '') : '' }}
+					<i class="fas fa-flag" *ngIf="col.flag && !col.open"></i>
+					<i class="fas fa-bomb" *ngIf="( !col.flag && col.mine && col.open ) || (gameOver && col.mine && !col.flag)"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

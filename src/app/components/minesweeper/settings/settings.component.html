@@ -1,0 +1,65 @@
+<h2>Settings</h2>
+<hr>
+<div class="row content" id="content">
+    <div 
+        class="col-12" 
+        [hidden]="!showCustom">
+        <form 
+            [formGroup]="form" 
+            class="login-container m-blue" 
+            autocomplete="nope">
+            <label for="username">Name</label> 
+            <div class="input-group mb-3">
+                <br>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Name" 
+                    formControlName="name" 
+                    autocomplete="off">
+            </div>
+            <label for="username">Row</label> 
+            <div class="input-group mb-3">
+                <br>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Width" 
+                    formControlName="width" 
+                    autocomplete="off">
+            </div>
+            <label for="username">Col</label> 
+            <div class="input-group mb-3">
+                <br>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Height" 
+                    formControlName="height" 
+                    autocomplete="off">
+            </div>
+            <label for="username">Mines</label> 
+            <div class="input-group mb-3">
+                <br>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Mines" 
+                    formControlName="mines" 
+                    autocomplete="off">
+            </div>
+            <button 
+                type="button" 
+                class="btn btn-success" 
+                (click)="save()">Game</button>
+        </form>
+    </div>
+    <div 
+        class="col-12" 
+        [hidden]="showCustom">
+        <button type="button" class="btn btn-block btn-success" (click)="selectGame(GameType.EASY)">EASY ( 9 x 9 ) / 10 Mines</button>
+        <button type="button" class="btn btn-block btn-warning" (click)="selectGame(GameType.NORMAL)">NORMAL ( 16 x 16 ) / 40 Mines</button>
+        <button type="button" class="btn btn-block btn-danger" (click)="selectGame(GameType.HARD)">HARD (30 x 16) / 99 Mines</button>
+        <button type="button" class="btn btn-block btn-dark" (click)="selectGame(GameType.CUSTOM)">CUSTOM</button>
+    </div>
+</div>
